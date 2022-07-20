@@ -21,6 +21,7 @@ function heartDelivery(input) {
       }
     }
   }
+  
   let missed = 0;
   for (let house of houses) {
     if (house > 0) {

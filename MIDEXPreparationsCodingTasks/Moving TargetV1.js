@@ -33,9 +33,9 @@ function movingTarget(inputArr) {
       for (let index = 0; index < targetList.length; index++) {
         if (indexOfCommand >= 0 && indexOfCommand < targetList.length) {
           targetList.splice(indexOfCommand, 0, commandValue);
-        } 
+        }
       }
-      if (indexOfCommand < 0 || indexOfCommand > targetList.length-1 ){
+      if (indexOfCommand < 0 || indexOfCommand > targetList.length - 1) {
         console.log(`Invalid placement!`);
       }
     }
@@ -47,11 +47,14 @@ function movingTarget(inputArr) {
           let deleteCounter = commandValue * 2 + 1;
           if (0 <= startingIndex && deleteCounter < targetList.length - 1) {
             targetList.splice(startingIndex, deleteCounter);
-          } else if (startingIndex < 0 || deleteCounter > targetList.length - 1) {
-            console.log(`Strike missed!`); 
+          } else if (
+            startingIndex < 0 ||
+            deleteCounter > targetList.length - 1
+          ) {
+            console.log(`Strike missed!`);
           }
         }
-      } 
+      }
     }
 
     tokens = commandsLine.shift().split(" ");
@@ -62,13 +65,13 @@ function movingTarget(inputArr) {
   console.log(targetList.join("|"));
 }
 
-// movingTarget([
-//   "52 74 23 44 96 110",
-//   "Shoot 5 10",
-//   "Shoot 1 80",
-//   "Strike 2 1",
-//   "Add 22 3",
-//   "End",
-// ]);
+movingTarget([
+  "52 74 23 44 96 110",
+  "Shoot 5 10",
+  "Shoot 1 80",
+  "Strike 2 1",
+  "Add 22 3",
+  "End",
+]);
 
- movingTarget(["1 2 3 4 5", "Strike 0 1", "End"]);
+movingTarget(["1 2 3 4 5", "Strike 0 1", "End"]);
